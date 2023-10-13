@@ -4,19 +4,49 @@
 <img align="left" height="180rem" alt="Badge BootCamp Potencia Tech - Programação do zero" src="https://hermes.dio.me/tracks/9388e8d8-00d5-4007-a7c9-357324fe73fa.png"/>
 <div align="left">
 
-## Bootcamp Potência Tech iFood!
+## 1️⃣ Desafio Classificador de nível de Herói
 
-Trabalhou os princípios da lógica de programação, começando por conceitos introdutórios, desde a exploração de algoritmos, variáveis e estruturas condicionais até a implementação de estruturas de repetição, operadores lógicos e de comparação e objetos. Usou projetos práticos para aplicar esses conhecimentos e fortalecer base de lógica de programação e para entender como contribuir desenvolvimento de software open source via github.
+Prover uma classificação, usando variaveis, para o Heroi com base na quantidade de exp que ele possui 
 
 </div>
 </div>
 
-## Projetos
+<br>
+<br>
+<br>
 
-| Desafio                                 | Descrição |
-| -------------                           | ------------- |
-| 1. Calculadora de Nivel do Heroi        | Prover uma classificação, usando variaveis, para o Heroi com base na quantidade de exp que ele possui |
-| 2. Calculadora de Partidas Rankeadas    | Prover uma classificação, usando funções, para o Heroi com base na quantidade de vitorias que ele possui  |
-| 3. Escrevendo Classes de Jogo           | Implementar os principios de herança em objetos, para que as ações do heroi variem de acordo com sua classe/profissão  |
+## Instruções para entrega
 
+**O Que deve ser utilizado**
+
+- Variáveis
+- Operadores
+- Laços de repetição
+- Estruturas de decisões
+
+## Objetivo
+
+Crie uma variável para armazenar o nome e a quantidade de experiência (XP) de um herói, depois utilize uma estrutura de decisão para apresentar alguma das mensagens abaixo:
+
+Se XP for menor do que 1.000 = Ferro
+Se XP for entre 1.001 e 2.000 = Bronze
+Se XP for entre 2.001 e 5.000 = Prata
+Se XP for entre 6.001 e 7.000 = Ouro
+Se XP for entre 7.001 e 8.000 = Platina
+Se XP for entre 8.001 e 9.000 = Ascendente
+Se XP for entre 9.001 e 10.000= Imortal
+Se XP for maior ou igual a 10.001 = Radiante
+
+## Saída
+
+Ao final deve se exibir uma mensagem:
+"O Herói de nome **{nome}** está no nível de **{nivel}**"
+
+## Projeto
+
+<div align="center">
+
+![nivelHero](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/assets/88497805/cf2becfd-fb69-47f5-b462-e8dc6dc010af)
+  
+</div>
 
