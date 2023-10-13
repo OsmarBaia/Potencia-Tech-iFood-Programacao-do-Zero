@@ -43,8 +43,23 @@ body{
 
 #hero-namingCard{
     margin-top: 22rem;
+    flex-direction: column;
 }
-
+#hero-namingCard label{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+#hero-namingCard input{
+    width: 16rem;
+    height: 2rem;
+}
+#hero-namingCard button{
+    border-radius: 1rem;
+    width: 5rem;
+    padding: 0.5rem;
+    margin: 1rem auto;
+}
 #hero-infoCard{
     height: auto;
     flex-direction: column;
@@ -123,6 +138,8 @@ body{
     width: 16rem;
 }
 #hero-ranking p{
+    font-size: 1.2rem;
+    text-align: justify;
     margin-bottom: 1rem;
 }
 
