@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body{
+    background-color: lightgray;
+}
+
+.container-center{
+    width: 20rem;
+    margin: 10rem auto auto auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: lightyellow;
+}
+
+.containers-shadow{
+    border: 1px solid dimgray;
+    box-shadow: 2px 2px black;
+}
+
+.x-large_text-shadow{
+    text-shadow: .08rem .08rem dimgray;
+}
+
+.container-flex{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.cardButton{
+    border-radius: 1rem;
+    background-color: lightgray;
+    width: 49%;
+    height: 100%;
+}
+
+#hero-namingCard{
+    margin-top: 22rem;
+}
+
+#hero-infoCard{
+    height: auto;
+    flex-direction: column;
+}
+
+#infoCard-heroName{
+    padding: 1rem;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#infoCard-heroImage{
+    height: 15rem;
+    width: 15rem;
+    margin: auto;
+}
+
+#hero-avatar{
+    width: 100%;
+}
+
+#info-container{
+    width: 15rem;
+    margin: 1rem auto;
+}
+
+#infoCard-playerActions{
+    margin-bottom: 1rem;
+    height: 5rem;
+}
+
+#infoCard-playerActions button {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.2rem;
+}
+
+#infoCard-heroExp{
+    width: 15rem;
+}
+
+#exp-label{
+    padding: 0.1rem;
+    width: 5rem;
+}
+
+#exp-amount{
+    width: auto;
+    padding: 0.1rem;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.big-text{
+    font-size: large;
+    font-weight: bold;
+    -webkit-text-stroke: 0.03em black;
+    text-shadow: 0.04rem 0.04rem black;
+}
+
+.exp-text-color{
+    color: darkseagreen;
+}
+
+.ranking-text-color{
+    color: goldenrod;
+}
+
+#hero-ranking{
+    flex-direction: column;
+}
+
+#hero-ranking img{
+    padding: 1rem;
+    width: 16rem;
+}
+#hero-ranking p{
+    margin-bottom: 1rem;
+}
+
+#hero-ranking button{
+    height: 3rem;
+}

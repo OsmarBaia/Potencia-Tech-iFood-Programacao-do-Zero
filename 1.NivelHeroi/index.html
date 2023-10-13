@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <title>Nível Herói</title>
+</head>
+<body onload="Start()">
+
+<div id="hero-namingCard" class="container-center containers-shadow">
+    <div>
+        <label for="namingCard_input"> Entre o nome do Herói: </label>
+        <input type="text" name="input-heroName" id="namingCard_input" placeholder="Thor">
+        <button id="bt-openHeroCard" onclick="OpenHeroCard()"> OK </button>
+    </div>
+</div>
+
+<div id="hero-infoCard" class="container-center container-flex">
+    <div id="infoCard-heroName" class="x-large_text-shadow"><p>Name</p></div>
+    <div id="infoCard-heroImage" class="containers-shadow">
+        <figure>
+            <img id="hero-avatar" src="./assets/satiro.gif" alt="avatar do herói">
+        </figure>
+    </div>
+    <div id="info-container">
+        <div id="infoCard-playerActions" class="container-flex">
+            <button id="infoCard-btAddExp" class="cardButton container-flex" onclick="AddExp()">
+                <img height="24px" src="assets/adicionar.png" alt="add icon">
+                <span class="exp-text-color big-text">Exp</span>
+            </button>
+            <button id="infoCard-btRanking" class="cardButton container-flex" onclick="CalcHeroRankByExpAmount()">
+                <img src="assets/trophy.png" alt="trophy icon">
+                <span class="ranking-text-color big-text">Ranking</span>
+            </button>
+        </div>
+        <hr>
+        <div id="infoCard-heroExp" class="container-flex">
+            <p id="exp-label" class="exp-text-color big-text">
+                Exp:
+            </p>
+            <p id="exp-amount">
+                exp-amount
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="hero-ranking" class="container-center containers-shadow container-flex">
+    <img width="" src="assets/ranking.png" alt="ranking" id="rank-badge">
+    <p id="ranking-text">
+    </p>
+    <button class="cardButton" onclick="CloseRanking()"> OK </button>
+</div>
+
+</body>
+</html>
