@@ -1,12 +1,17 @@
-const maxDiceRolls = 22; // Must be a multiple of 2
-const rollsResults = [];
+const NUMBER_OF_DICE     = 2;
+const diceContainer     = document.querySelector(".dice-container");
+const btnRollDice       = document.querySelector(".btn-roll-dice");
+
+const diceRollsResults    = [];
+const roundResultsTable = document.querySelector("#results__container table tbody");
+
+const maxDiceRolls = 11;
 const pointsAmount ={
     victory: 10, drawn: 5, loses: 1
 }
 const roundsResults = {
     victories: 0, drawn: 0, loses:0
 }
-
 const rankings = [
     ["Ferro",10],
     ["Bronze",20],
@@ -17,8 +22,99 @@ const rankings = [
     ["Imortal", 101]
 ]
 
+
+function AppendRoundResult(){
+    let roundNumber = (diceRollsResults.length/2);
+    let computerDiceRoll = diceRollsResults[diceRollsResults.length - 1];
+    let playerDiceRoll = diceRollsResults[diceRollsResults.length - 2];
+    let result = playerDiceRoll > computerDiceRoll ? "Vitória!" : (playerDiceRoll < computerDiceRoll ? "Derrota!" : "Empate!");
+    let points = playerDiceRoll > computerDiceRoll ? 10 : (playerDiceRoll < computerDiceRoll ? 1 : 5);
+    
+    const tableRow = document.createElement("tr");
+    const fragment = document.createDocumentFragment();
+    const contents = [roundNumber, playerDiceRoll, computerDiceRoll, result, points];    
+    contents.forEach((content) =>{
+        const td = document.createElement("td")
+        td.textContent = content;
+        fragment.appendChild(td);
+    });
+    
+    tableRow.appendChild(fragment);
+    roundResultsTable.appendChild(tableRow);    
+}
+
+function createDice(number) {
+    const dotPositionMatrix = {
+        1: [
+            [50, 50]
+        ],
+        2: [
+            [20, 20],
+            [80, 80]
+        ],
+        3: [
+            [20, 20],
+            [50, 50],
+            [80, 80]
+        ],
+        4: [
+            [20, 20],
+            [20, 80],
+            [80, 20],
+            [80, 80]
+        ],
+        5: [
+            [20, 20],
+            [20, 80],
+            [50, 50],
+            [80, 20],
+            [80, 80]
+        ],
+        6: [
+            [20, 20],
+            [20, 80],
+            [50, 20],
+            [50, 80],
+            [80, 20],
+            [80, 80]
+        ]
+    };
+
+    const dice = document.createElement("div");
+
+    dice.classList.add("dice");
+
+    for (const dotPosition of dotPositionMatrix[number]) {
+        const dot = document.createElement("div");
+
+        dot.classList.add("dice-dot");
+        dot.style.setProperty("--top", dotPosition[0] + "%");
+        dot.style.setProperty("--left", dotPosition[1] + "%");
+        dice.appendChild(dot);
+    }
+
+    return dice;
+}
+
+function randomizeDice(diceContainer, numberOfDice) {
+    diceContainer.innerHTML = "";
+    for (let i = 0; i < numberOfDice; i++) {
+        const random = Math.floor((Math.random() * 6) + 1);
+        const dice = createDice(random);
+        diceContainer.appendChild(dice);
+    }
+}
+
+randomizeDice(diceContainer, NUMBER_OF_DICE);
+
+function GetDiceRollValue(){
+    for (let i = 0; i < NUMBER_OF_DICE; i++) {
+        diceRollsResults.push(diceContainer.children[i].childElementCount);
+    }
+}
+
 function CalculatePlayerPoints() {
-    let intResults = rollsResults.map(e => parseInt(e));
+    let intResults = diceRollsResults.map(e => parseInt(e));
     for (let i = 0; i < intResults.length; i += 2) {
         console.log(`${(i/2)+1} Rodada - Player ${intResults[i]} x ${intResults[i+1]} Computador`);
 
@@ -46,56 +142,21 @@ function ClassifyPlayer(){
     }
 }
 
-function RollDice(){
-    return Math.floor((Math.random() * 6) + 1);
-}
+btnRollDice.addEventListener("click", () => {
+    if(roundResultsTable.childElementCount < maxDiceRolls){
+        const interval = setInterval(() => {
+            randomizeDice(diceContainer, NUMBER_OF_DICE);
+        }, 50);
 
-for (let i = 0; i < maxDiceRolls; i++) {
-    let num1 = RollDice();
-    let num2 = RollDice();
-    rollsResults.push(num1);
-    rollsResults.push(num2);
-    
-    let newLine = `<tr>
-        <td>${i+1}</td>
-        <td>${num1}</td>
-        <td>${num2}</td>
-    </tr>`
-    
-    console.log(newLine);
-}
+        setTimeout(() => clearInterval(interval), 1000);
+        setTimeout(() => {GetDiceRollValue()}, 1100)
+        setTimeout(()=>{AppendRoundResult()} ,1200)
+    }
+    else
+    {
+        //Change Button Image
+        ClassifyPlayer();
+    }
+});
 
-ClassifyPlayer();
 
-//WEB
-//
-// //Base code: Roll Dice! by Lena Stanley. Available at: https://codepen.io/lenasta92579651/pen/yLeVmdW
-// const elDiceOne = document.getElementById('dice1');
-// const elDiceTwo = document.getElementById('dice2');
-// const elComeOut     = document.querySelector("#roll button");
-//
-// elComeOut.onclick   = function () {rollDices();};
-//
-// function ToggleRollButton(){
-//     elComeOut.disabled = elComeOut.disabled === false;
-// }
-//
-// function rollDice(dice){
-//     let rolledNumber = Math.floor((Math.random() * 6) + 1);
-//     for (let i = 1; i <= 6; i++) {
-//         dice.classList.remove('show-' + i);
-//         if (rolledNumber === i) {
-//             dice.classList.add('show-' + i);
-//         }
-//     }
-//     rollsResults.push(rolledNumber);
-//     //setTimeout(rollDice,1000)
-// }
-// function rollDices(){
-//     setTimeout(ToggleRollButton, 3000);
-//     ToggleRollButton();
-//
-//     setTimeout(rollDice, 1500, elDiceOne);
-//     rollDice(elDiceTwo);
-// }
-//
