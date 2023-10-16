@@ -16,7 +16,7 @@ Trabalhou os princípios da lógica de programação, começando por conceitos i
 | Desafio                                 | Descrição | Branch | 
 | -------------                           | ------------- | ------------- |
 | 1. Calculadora de Nivel do Heroi        | Prover uma classificação, usando variaveis, para o Heroi com base na quantidade de exp que ele possui | [Nível do Herói](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/NivelHeroi)  |
-| 2. Calculadora de Partidas Rankeadas    | Prover uma classificação, usando funções, para o Heroi com base na quantidade de vitorias que ele possui  |   |
+| 2. Calculadora de Partidas Rankeadas    | Prover uma classificação, usando funções, para o Heroi com base na quantidade de vitorias que ele possui  | [Partidas Rankeado](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/Partidas-Rankeadas)  |
 | 3. Escrevendo Classes de Jogo           | Implementar os principios de herança em objetos, para que as ações do heroi variem de acordo com sua classe/profissão  |   |
 
 ## Certificado
