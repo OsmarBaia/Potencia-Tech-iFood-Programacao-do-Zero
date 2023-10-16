@@ -1,7 +1,9 @@
-const NUMBER_OF_DICE     = 2;
 const diceContainer     = document.querySelector(".dice-container");
+const rankContainer     = document.querySelector("#container-rank");
 const btnRollDice       = document.querySelector(".btn-roll-dice");
 
+
+const NUMBER_OF_DICE     = 2;
 const diceRollsResults    = [];
 const roundResultsTable = document.querySelector("#results__container table tbody");
 
@@ -9,9 +11,7 @@ const maxDiceRolls = 11;
 const pointsAmount ={
     victory: 10, drawn: 5, loses: 1
 }
-const roundsResults = {
-    victories: 0, drawn: 0, loses:0
-}
+
 const rankings = [
     ["Ferro",10],
     ["Bronze",20],
@@ -22,17 +22,50 @@ const rankings = [
     ["Imortal", 101]
 ]
 
+function Start(){
+    rankContainer.style.display = "none";
+}
+
+function GetLastRoll(wantedChar){
+    if(diceRollsResults.length >= 2 && diceRollsResults.length % 2 === 0){        
+        if (wantedChar === "hero"){
+            return diceRollsResults[diceRollsResults.length - 2];
+        }                       
+        
+        if(wantedChar === "enemy"){
+            return diceRollsResults[diceRollsResults.length - 1];
+        }
+    }
+}
+
+function GetRoundInfo(infoType){
+    let heroDiceRoll = GetLastRoll("hero");
+    let enemyDiceRoll = GetLastRoll("enemy");
+    
+    if(infoType === "result"){
+       return heroDiceRoll > enemyDiceRoll ? "Vitória!" : (heroDiceRoll < enemyDiceRoll ? "Derrota!" : "Empate!");
+    }
+    
+    if(infoType === "points"){
+        return heroDiceRoll > enemyDiceRoll ? 10 : (heroDiceRoll < enemyDiceRoll ? 1 : 5);
+
+    }
+}
+
+function GetCurrentRound(){
+    return  (diceRollsResults.length/2);
+}
 
 function AppendRoundResult(){
-    let roundNumber = (diceRollsResults.length/2);
-    let computerDiceRoll = diceRollsResults[diceRollsResults.length - 1];
-    let playerDiceRoll = diceRollsResults[diceRollsResults.length - 2];
-    let result = playerDiceRoll > computerDiceRoll ? "Vitória!" : (playerDiceRoll < computerDiceRoll ? "Derrota!" : "Empate!");
-    let points = playerDiceRoll > computerDiceRoll ? 10 : (playerDiceRoll < computerDiceRoll ? 1 : 5);
+    let heroDiceRoll = GetLastRoll("hero");
+    let enemyDiceRoll = GetLastRoll("enemy");
+    let roundNumber = GetCurrentRound();
+    let roundResult = GetRoundInfo("result");
+    let roundPoints =  GetRoundInfo("points");
     
     const tableRow = document.createElement("tr");
     const fragment = document.createDocumentFragment();
-    const contents = [roundNumber, playerDiceRoll, computerDiceRoll, result, points];    
+    const contents = [roundNumber, heroDiceRoll, enemyDiceRoll, roundResult, roundPoints];    
     contents.forEach((content) =>{
         const td = document.createElement("td")
         td.textContent = content;
@@ -115,9 +148,11 @@ function GetDiceRollValue(){
 
 function CalculatePlayerPoints() {
     let intResults = diceRollsResults.map(e => parseInt(e));
+    let roundsResults = {
+        victories: 0, drawn: 0, loses:0
+    }    
+    
     for (let i = 0; i < intResults.length; i += 2) {
-        console.log(`${(i/2)+1} Rodada - Player ${intResults[i]} x ${intResults[i+1]} Computador`);
-
         if (intResults[i] > intResults[i + 1]) {
             roundsResults.victories += 1;
         } else if (intResults[i] === intResults[i + 1]) {
@@ -130,33 +165,47 @@ function CalculatePlayerPoints() {
 }
 
 function ClassifyPlayer(){
-    let playerPoints = CalculatePlayerPoints();
+    let playerPoints = CalculatePlayerPoints();    
+    let rankTextValue = "";    
     for (let i = 0; i < rankings.length; i++) {
         if(playerPoints <= rankings[i][1]){
-            console.log(`"O Herói tem saldo de ${playerPoints} pontos e está no nível de ${rankings[i][0]}`)
+            rankTextValue = `O Herói tem saldo de <strong>${playerPoints}</strong> pontos e está no nível de <strong>${rankings[i][0]}<strong>`;
             break;
         }
         if(i === (rankings.length -1) && playerPoints >=  rankings[i][1]){
-            console.log(`"O Herói tem saldo de ${playerPoints} pontos e está no nível de ${rankings[i][0]}`)
+            rankTextValue = `"O Herói tem saldo de <strong>${playerPoints}</strong> pontos e está no nível de <strong>${rankings[i][0]}</strong>`;
         }
     }
+    let textElement = document.createElement("p");    
+    textElement.innerHTML = rankTextValue;    
+    rankContainer.insertBefore(textElement, rankContainer.firstElementChild.nextSibling);
+    rankContainer.style.display="";
+}
+
+function ToggleRollButton(){
+    btnRollDice.disabled = btnRollDice.disabled===false;
 }
 
 btnRollDice.addEventListener("click", () => {
+    ToggleRollButton();
+    setTimeout(()=>{ToggleRollButton()} ,1400);
+
     if(roundResultsTable.childElementCount < maxDiceRolls){
-        const interval = setInterval(() => {
+        let interval = setInterval(() => {
             randomizeDice(diceContainer, NUMBER_OF_DICE);
         }, 50);
 
-        setTimeout(() => clearInterval(interval), 1000);
-        setTimeout(() => {GetDiceRollValue()}, 1100)
-        setTimeout(()=>{AppendRoundResult()} ,1200)
+        setTimeout(() => clearInterval(interval), 1000);        
+        setTimeout(() => {GetDiceRollValue()}, 1100);
+        setTimeout(()=> {AppendRoundResult()} ,1200);
+        setTimeout( ()=>{
+            if(roundResultsTable.childElementCount >= maxDiceRolls){
+                btnRollDice.innerText = "Rank!"
+            }
+        },1300);
     }
     else
     {
-        //Change Button Image
         ClassifyPlayer();
     }
 });
-
-
