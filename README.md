@@ -4,22 +4,53 @@
 <img align="left" height="180rem" alt="Badge BootCamp Potencia Tech - Programação do zero" src="https://hermes.dio.me/tracks/9388e8d8-00d5-4007-a7c9-357324fe73fa.png"/>
 <div align="left">
 
-## Resumo
+## 3️⃣ Escrevendo as classes de um Jogo
 
-Trabalhou os princípios da lógica de programação, começando por conceitos introdutórios, desde a exploração de algoritmos, variáveis e estruturas condicionais até a implementação de estruturas de repetição, operadores lógicos e de comparação e objetos. Usou projetos práticos para aplicar esses conhecimentos e fortalecer base de lógica de programação e para entender como contribuir desenvolvimento de software open source via github.
+Implementar os principios de herança em objetos, para que as ações do heroi variem de acordo com sua classe/profissão
+
+<br><br><br>
+
+## O Que deve ser utilizado ##
+
+- Variáveis
+- Operadores
+- Laços de repetição
+- Estruturas de decisões
+- Funções
+- Classes e Objetos
+
+## Objetivo:
+
+Crie uma classe generica que represente um herói de uma aventura e que possua as seguintes propriedades:
+
+- nome
+- idade
+- tipo (ex: guerreiro, mago, monge, ninja )
+
+além disso, deve ter um método chamado atacar que deve atender os seguientes requisitos:
+
+- exibir a mensagem: "o {tipo} atacou usando {ataque}")
+- aonde o {tipo} deve ser concatenando o tipo que está na propriedade da classe
+- e no {ataque} deve seguir uma descrição diferente conforme o tipo, seguindo a tabela abaixo:
+
+se mago -> no ataque exibir (usou magia)
+se guerreiro -> no ataque exibir (usou espada)
+se monge -> no ataque exibir (usou artes marciais)
+se ninja -> no ataque exibir (usou shuriken)
+
+## Saída
+
+Ao final deve se exibir uma mensagem:
+
+- "o {tipo} atacou usando {ataque}"
+  ex: mago atacou usando magia
+  guerreiro atacou usando espada
 
 </div>
 </div>
 
-## Projetos
+## Projeto
 
-| Desafio                                 | Descrição | Branch | 
-| -------------                           | ------------- | ------------- |
-| 1. Calculadora de Nivel do Heroi        | Prover uma classificação, usando variaveis, para o Heroi com base na quantidade de exp que ele possui | [Nível do Herói](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/NivelHeroi)  |
-| 2. Calculadora de Partidas Rankeadas    | Prover uma classificação, usando funções, para o Heroi com base na quantidade de vitorias que ele possui  | [Partidas Rankeado](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/Partidas-Rankeadas)  |
-| 3. Escrevendo Classes de Jogo           | Implementar os principios de herança em objetos, para que as ações do heroi variem de acordo com sua classe/profissão  |   |
-
-## Certificado
 
 
 
