@@ -11,15 +11,42 @@
 
     <title>Create Hero</title>
 </head>
-<body>
+<body onload="Start()">
 <div id="container-main">
     <div id="container-menu" class="container-shadow">
         <div id="menu__title">
-
+            <h1>Escolha um Herói!</h1>
+            <hr>
         </div>
-        <button id="menu__button" class="container-button container-shadow">
-            OK
+
+        <h2 id="menu__className">Guerreiro</h2>
+
+        <div id="menu__image">
+            <img src="assets/warrior.gif"   height="450"    width="450"     alt="warrior image"/>
+            <img src="assets/mage.gif"      height="450"    width="450"     alt="mage image"/>
+            <img src="assets/monk.gif"      height="450"    width="450"     alt="monk image"/>
+            <img src="assets/ninja.gif"     height="450"    width="450"     alt="ninja image"/>
+        </div>
+        <div id="menu__action">
+            <button id="action__nextHero" class="container-button container-shadow button-shadow" onclick="ChangeJob(this)">
+                <
+            </button>
+            <button id="action__prevHero" class="container-button container-shadow button-shadow" onclick="ChangeJob(this)">
+                >
+            </button>
+        </div>
+        <button id="menu__button" class="container-button container-shadow button-shadow" onclick="ChooseHero()">
+            Escolher
         </button>
+    </div>
+    <div id="container-heroAttack" class="container-shadow">
+
+        <h2 class="heroAttack__className">Guerreiro</h2>
+        <hr>
+        <p id="heroAttack__text">
+            O guerreiro atacou usando espada
+        </p>
+        <button class="container-button button-shadow" onclick="toggleHeroAttackContainer()">OK</button>
     </div>
 </div>
 </body>
