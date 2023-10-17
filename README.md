@@ -51,6 +51,8 @@ Ao final deve se exibir uma mensagem:
 
 ## Projeto
 
+<div align="center">
 
+![HeroClasses](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/assets/88497805/16670c91-3f8a-4b43-9c87-aeb3559c9430)
 
-
+</div>
