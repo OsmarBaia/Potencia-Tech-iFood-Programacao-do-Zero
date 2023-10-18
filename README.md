@@ -1,29 +1,32 @@
-# Potência Tech iFood - Programação do Zero
+# Formação CSS Web Developer
 
 <div align="center">
-<img align="left" height="180rem" alt="Badge BootCamp Potencia Tech - Programação do zero" src="https://hermes.dio.me/tracks/9388e8d8-00d5-4007-a7c9-357324fe73fa.png"/>
+<img align="left" height="180rem" alt="Badge Formação CSS Developer" src=""/>
 <div align="left">
 
 ## Resumo
 
-Trabalhou os princípios da lógica de programação, começando por conceitos introdutórios, desde a exploração de algoritmos, variáveis e estruturas condicionais até a implementação de estruturas de repetição, operadores lógicos e de comparação e objetos. Usou projetos práticos para aplicar esses conhecimentos e fortalecer base de lógica de programação e para entender como contribuir desenvolvimento de software open source via github.
+A formaçãão aprensenta o  Cascading Style Sheets, CSS, e ensina tipos de importação, propriedades, unidades de medida, organização de elementos (flexbox e grid), animações, resposividade, pseudo elementos, boas práticas no css, e frameworks(bootstrap). É composta de 5 projetos praticos. 
 
 </div>
 </div>
+
+<br>
 
 ## Projetos
 
 | Desafio                                 | Descrição | Branch | 
 | -------------                           | ------------- | ------------- |
-| 1. Calculadora de Nivel do Heroi        | Prover uma classificação, usando variaveis, para o Heroi com base na quantidade de exp que ele possui | [Nível do Herói](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/NivelHeroi)  |
-| 2. Calculadora de Partidas Rankeadas    | Prover uma classificação, usando funções, para o Heroi com base na quantidade de vitorias que ele possui  | [Partidas Rankeado](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/Partidas-Rankeadas)  |
-| 3. Escrevendo Classes de Jogo           | Implementar os principios de herança em objetos, para que as ações do heroi variem de acordo com sua classe/profissão  | [Classes do Heroi](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/tree/Classes-do-Heroi)  |
+| 1. LandPage da Trilha CSS       | Construir uma Landing Page com HTML e CSS, colocando em prática os fundamentos do CSS, as propriedades básicas da linguagem de estilização, além de trabalhar com as unidades de medidas relativas e absolutas, usando como base o modelo disponivel no [figma](https://www.figma.com/file/3PiokoJj9IhGDnNiWAJbz7/DIO---Desafio-01?node-id=0%3A1) | []()  |
+| 2.     |  | []()  |
+| 3.     |  | []()  |
+| 4.     |  | []()  |
+| 5.     |  | []()  |
 
 ## Certificado
 
 <div align="center">
 
-![image](https://github.com/OsmarBaia/Potencia-Tech-iFood-Programacao-do-Zero/assets/88497805/e1cc92bf-bd62-408a-853b-5ccce1baf2cc)
 
 </div>
 
